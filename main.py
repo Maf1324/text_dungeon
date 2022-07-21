@@ -1,36 +1,41 @@
+from classes.player import Player
 from utils import handle_choice, row_print
 
 # Lista de afazeres
-# TODO criar classe Player
+# TODO Criar classe Status
+# TODO Criar classe Inimigos
+# TODO Criar classe Batalha
 
 """
 A classe Game:
-    - Inicia o objeto jogo
-    - Cria um objeto de jogador usando a classe Player
-    - Inicia o loop principal do jogo
-    Tera as funções:
-        - criar dungeon
+    - Atributos:
+        * player, objeto de jogador usando a classe Player;
+        * Playing, irá controlar o loop principal do jogo;
+        * menu_choices, são as opções de interação para o jogador escolher.
 
+    - Metodos:
+        * Jogar, inicia o loop principal do jogo;
+        * criar dungeon, irá iniciar uma rodada da classe Dungeon;
+        * Salvar jogo;
+        * Sair do jogo.
 
 O loop principal:
-    Terá uma variavel que vai controlar o loop "playing"
-    Ira mostrar as opções que o usuario poderá escolher:
-        - Dungeon
-        - Itens --> Função será criada dentro do objeto de personagem
-        - Save
-        - Quit
-
+    - Irá rodar enquanto o atributo self.alive == True;
+    - Irá mostrar as opções que o usuario poderá escolher:
+        * Dungeon, utiliza metodo criar dungeon;
+        * Itens, utiliza metodo mostrar itens da classe Player
+        * Save, salva o jogo;
+        * Quit, encerra o jogo.
 """
 
 
 class Game:
-
     def __init__(self) -> None:
-        self._player = 'Will creat a player'  # TODO criar classe Player
+        self._player = Player()
         self.__playing = True
         self.__menu_choices = {
             '1': self.run_dungeon,
-            '2': 'Show itens',  # TODO criar função na classe Player
+            '2': self._player.show_itens,
             '3': self.save_game,
             '4': self.quit_game,
         }
