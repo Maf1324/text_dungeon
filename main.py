@@ -2,9 +2,9 @@ from classes.player import Player
 from utils import handle_choice, row_print
 
 # Lista de afazeres
-# TODO Criar classe Status
 # TODO Criar classe Inimigos
 # TODO Criar classe Batalha
+# TODO Criar um jeito de fazer o Level Up automatico do Player após batalha
 
 """
 A classe Game:
