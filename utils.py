@@ -14,3 +14,14 @@ def handle_choice(choice, choices) -> FunctionType:
         return handle_choice(choice, choices)
 
     return choices[choice]
+
+
+def get_int_input(frase=''):
+    choice = input(f'{frase} --> ')
+    try:
+        choice = int(choice)
+        return choice
+    except ValueError as e:
+        e = e
+        row_print('Invalid point value, use only numbers and try again...')
+        return get_int_input(frase)
