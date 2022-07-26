@@ -43,3 +43,7 @@ class Player(Char):
 
     def show_itens(self):
         print('Listing itens')
+
+    def level_up(self):
+        self.level += 1
+        self.status.handle_level_up()
